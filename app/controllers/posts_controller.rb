@@ -1,6 +1,10 @@
-class PostsController < ApplicationController
+class PostsController < ApplicationController #Controller is a class defined to inherit from ApplicationController
   def new
     @post = Post.new
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   def create
@@ -15,6 +19,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message) # Whitelist controller parameters to prevent wrongful mass assignment
   end
 end
