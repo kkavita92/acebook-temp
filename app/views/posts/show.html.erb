@@ -7,13 +7,14 @@
 <% @post.comments.each do |comment| %>
   <p>
     <strong>Comment:</strong>
-    <%= comment.body %>
+    <%= comment.body %> by <%= comment.user.email %>
   </p>
 <% end %>
 
 
 <h2>Add a comment:</h2>
 <%= form_for([@post, @post.comments.build]) do |form| %>
+ <%= form.hidden_field(:user_id, value: current_user.id) %>
 <p>
   <%= form.text_area :body %>
 </p>
