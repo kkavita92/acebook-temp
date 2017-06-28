@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
 
-  let(:post) { Post.create(message: "New Post") }
+  let(:post) { Post.create(message: 'New Post') }
 
   it 'includes content and post id' do
     comment = Comment.create(body: "Lorem Ipsum", post_id: post.id)
