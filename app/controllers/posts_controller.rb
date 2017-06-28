@@ -1,4 +1,6 @@
 class PostsController < ApplicationController #Controller is a class defined to inherit from ApplicationController
+  before_action :require_login, only: [:create, :show, :new]
+
   def new
     @post = Post.new
   end
