@@ -1,6 +1,6 @@
 <h2>Posts</h2>
 <% @posts.each do |post| %>
-  <p><%= post.message %> by <%= post.user.email %> <%= link_to 'Show', post_path(post) %></p>
+  <p><%= post.message %> by <%= post.user.name %> <%= link_to 'Show', post_path(post) %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
