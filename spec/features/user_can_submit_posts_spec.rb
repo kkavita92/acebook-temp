@@ -10,5 +10,9 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("user10@example.com")
+    click_link "New post"
+    fill_in "Message", with: "Hello again"
+    click_button "Submit"
+    expect(page).to have_content("Hello again by user10@example.com")
   end
 end
