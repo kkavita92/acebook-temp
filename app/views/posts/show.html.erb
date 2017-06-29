@@ -8,7 +8,10 @@
   <p>
     <strong>Comment:</strong>
     <%= comment.body %> by <%= comment.user.name %>
-  </p>
+  <% if comment.user.id == current_user.id %>
+    <%= link_to 'Delete',  post_comment_path(comment.id, comment),   method: :delete %>
+  <% end %>
+ </p>
 <% end %>
 
 
